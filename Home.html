@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+   <script>
+function validasiForm() {
+    var f = document.forms["formPenjualan"];
+
+    if (
+        f.nama.value == "" ||
+        f.jumlah.value == "" ||
+        f.kategori.value == ""
+    ) {
+        alert("Semua field wajib diisi!");
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+
+
+<meta charset="UTF-8">
+<title>Website Yudha</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #aebcc2;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background: #000000;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 30px;
+    background: #ecf0f1;
+    min-height: 400px;
+}
+
+/* SEMUA KONTEN DISUNYIKAN */
+.content {
+    display: none;
+}
+
+/* KONTEN YANG DIKLIK DITAMPILKAN */
+.content:target {
+    display: block;
+}
+
+
+
+/* DEFAULT SAAT HALAMAN DIBUKA (TANPA #) */
+body:not(:has(:target)) #beranda {
+    display: block;
+}
+
+.box-info {
+    background: #f9f9f9;        /* warna latar lembut */
+    padding: 20px;              /* jarak dalam */
+    border-radius: 10px;        /* sudut melengkung */
+    border: 1px solid #ddd;     /* garis pinggir tipis */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* bayangan lembut */
+    width: 90%;                 /* menyesuaikan layar */
+    margin: 20px auto;          /* posisi tengah */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+.box-info h2 {
+    margin-top: 0;
+    color: #333;
+}
+.box-info p, .box-info li {
+    font-size: 15px;
+}
+
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Website Yudha</h1>
+    <img src="Profile.jpeg" width="100" height="100">
+</header>
+
+<nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#transaksi">Transaksi</a>
+    <a href="#profil">Profil</a>
+</nav>
+
+<main>
+
+<div id="beranda" class="content box-info">
+    <h2>Cara Menggunakan Website Ini</h2>
+    <p>1. Login menggunakan username dan password masing-masing</p>
+    <p>2. Setelah berhasil login anda akan berada dihalaman beranda, halaman beranda berisi cara menggunakan Website</p>
+    <p>3. Halaman transaksi, ini digunakan untuk menginput transaksi seperti penjualan/pembelian </p>
+
+    <p><strong>Cara melakukan transaksi :</strong></p>
+    <ol>
+        <li>Masukan nama transaksi anda</li>
+        <li>Masukan jumlah</li>
+        <li>Pilih kategori</li>
+        <li>Jika sudah klik tombol simpan</li>
+        <li>Untuk melihat transaksi apa saja yang pernah anda lakukan bisa klik daftar transaksi</li>
+    </ol>
+
+    <p>4. Halaman Profil, ini berisi deskripsi website yang dibuat</p>
+
+    <h2>Terimakasih Sudah Menggunakan Website Ini</h2>
+</div>
+
+<div id="transaksi" class="content box-info">
+    <h2>Transaksi Penjualan</h2>
+    <hr>
+
+    <form name="formPenjualan" onsubmit="return validasiForm()">
+    <pre>
+NAMA TRANSAKSI          :   <input type="text" size="30" name="nama">
+
+JUMLAH                  :   <input type="text" size="30" name="jumlah">  
+                        
+KATEGORI                :   <select name="kategori" size="1">
+                            <option value="MAKAN">MAKAN </option>
+                            <option value="JAJAN">JAJAN </option>
+                            <option value="KEBUTUHAN LAIN">KEBUTUHAN LAIN </option>
+                            </select>
+
+
+<button type="submit">Simpan</button>
+    </pre>
+    </form>
+    
+<a href="daftar_transaksi.html" target="_blank">Daftar Transaksi</a>
+
+</div>
+
+<div id="profil" class="content box-info">
+    <center>
+    <h3>Website ini adalah sebuah situs sederhana berbasis HTML yang dirancang untuk memberikan informasi serta fitur transaksi kepada pengguna. Tampilan website ini didominasi warna abu-abu dan hitam pada bagian header serta navigasi.</h3>
+    
+    <h3>HEADER</h3>
+    <p>Bagian header menampilkan Judul “Website Yudha”</p>
+    <h3>MENU NAVIGASI</h3>
+    <p>menu dinavigasi berfungsi mengarahkan pengguna kehalaman penting lainnya seperti beranda, transaksi, dan profile. Menu navigasi ini saya buat sederhana agar mudah digunakan oleh pengunjung</p>
+    <h3>FOOTER</h3>
+    <P>Di bagian paling bawah website terdapat footer sederhana bertuliskan : © 2026 Website Yudha</P>
+</center>
+</div>
+
+
+</main>
+
+<footer style="background:#405e7c;color:white;text-align:center;padding:10px;">
+© 2026 Website Yudha
+</footer>
+
+</body>
+</html>
